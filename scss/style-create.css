@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c265ae), color-stop(#ae61b6), color-stop(#955fbf), color-stop(#745fc6), color-stop(#5f6fd5), color-stop(#427ee2), color-stop(#008ceb), color-stop(#00abf9), color-stop(#00c8fc), color-stop(#00e3f8), to(#5ffbf1));
+  background-image: linear-gradient(to right top, #d16ba5, #c265ae, #ae61b6, #955fbf, #745fc6, #5f6fd5, #427ee2, #008ceb, #00abf9, #00c8fc, #00e3f8, #5ffbf1);
+}
+
+form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+      grid-template-columns: 60% 40%;
+  -ms-grid-rows: auto 90% auto;
+      grid-template-rows: auto 90% auto;
+      grid-template-areas: "title title" "edition_text edition_code" "button button";
+}
+
+.input {
+  margin-top: 1rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: title;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.input input {
+  font-family: "Roboto Slab", serif;
+  font-size: 64px;
+  color: white;
+  outline: none;
+  background-color: rgba(129, 129, 129, 0.459);
+  border: none;
+}
+
+.container__button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: button;
+}
+
+.form__contenu {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: edition_text;
+  display: -ms-grid;
+  display: grid;
+}
+
+.code_transformation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: edition_code;
+  margin: 1rem;
+}
+
+#editeur {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#contenu {
+  height: 60vh;
+  margin-bottom: 0;
+}
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.links a {
+  font-family: "Raleway", sans-serif;
+  margin: 1rem;
+  font-size: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+}
+
+textarea {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  outline: none;
+  background-color: rgba(129, 129, 129, 0.459);
+  margin: 1rem;
+  font-size: 20px;
+}
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+  color: white;
+}
+
+textarea::-ms-input-placeholder,
+input::-ms-input-placeholder {
+  color: white;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: white;
+}
+
+.container__button {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+button {
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(67, 223, 223, 0.466);
+  font-size: 18px;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+button:hover {
+  background-color: rgba(67, 223, 223, 0.856);
+}
+/*# sourceMappingURL=style-create.css.map */

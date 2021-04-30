@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html,
+form {
+  height: 100%;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c265ae), color-stop(#ae61b6), color-stop(#955fbf), color-stop(#745fc6), color-stop(#5f6fd5), color-stop(#427ee2), color-stop(#008ceb), color-stop(#00abf9), color-stop(#00c8fc), color-stop(#00e3f8), to(#5ffbf1));
+  background-image: linear-gradient(to right top, #d16ba5, #c265ae, #ae61b6, #955fbf, #745fc6, #5f6fd5, #427ee2, #008ceb, #00abf9, #00c8fc, #00e3f8, #5ffbf1);
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+form .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .container label {
+  font-size: 26px;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 2rem;
+}
+
+form .container input {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.541);
+  border: none;
+  padding: 1rem;
+  outline: none;
+}
+
+form button {
+  background: #5ffbf18e;
+  font-size: 26px;
+  font-family: "Roboto Slab", serif;
+  padding: 1rem;
+  border: none;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+form button:hover {
+  background: #5ffbf1;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+/*# sourceMappingURL=style_index.css.map */

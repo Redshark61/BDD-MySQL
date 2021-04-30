@@ -1,0 +1,96 @@
+@import "style";
+form {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto 90% auto;
+    grid-template-areas: "title title" "edition_text edition_code" "button button";
+}
+
+.input {
+    margin-top: 1rem;
+    grid-area: title;
+    display: grid;
+    place-items: center;
+}
+
+.input input {
+    font-family: "Roboto Slab", serif;
+    font-size: 64px;
+    color: white;
+    outline: none;
+    background-color: rgba(129, 129, 129, 0.459);
+    border: none;
+}
+
+.container__button {
+    grid-area: button;
+}
+
+.form__contenu {
+    grid-area: edition_text;
+    display: grid;
+}
+
+.code_transformation {
+    display: flex;
+    flex-direction: column;
+    grid-area: edition_code;
+    margin: 1rem;
+}
+
+#editeur {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#contenu {
+    height: 60vh;
+    margin-bottom: 0;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.links a {
+    font-family: "Raleway", sans-serif;
+    margin: 1rem;
+    font-size: 20px;
+    width: fit-content;
+    color: white;
+}
+
+textarea {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    outline: none;
+    background-color: rgba(129, 129, 129, 0.459);
+    margin: 1rem;
+    font-size: 20px;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: white;
+}
+
+.container__button {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+button {
+    font-family: "Raleway", sans-serif;
+    background-color: rgba(67, 223, 223, 0.466);
+    font-size: 18px;
+    color: white;
+    padding: 1rem;
+    border: none;
+}
+
+button:hover {
+    background-color: rgba(67, 223, 223, 0.856);
+}
