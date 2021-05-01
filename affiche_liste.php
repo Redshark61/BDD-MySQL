@@ -22,7 +22,7 @@ while ($donnees = $reponse->fetch()) {
         <h2><?= htmlspecialchars($donnees['titre']) ?></h2>
         <p><?= htmlspecialchars($donnees['description']) ?></p>
         <h3><?= htmlspecialchars($donnees['date_creation']) ?></h3>
-        <a href="http://<?=$_SERVER['HTTP_HOST']?>/test_tuto_bdd/affiche_tuto.php?name=<?= $donnees['file_name'] ?>"> <?= $donnees['titre'] ?></a>
+        <a href="http://<?=$_SERVER['HTTP_HOST']?>/BDD-MySQL/affiche_tuto.php?name=<?= $donnees['file_name'] ?>"> <?= $donnees['titre'] ?></a>
     </div>
 
 <?php
