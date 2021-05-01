@@ -1,0 +1,4 @@
+<?php
+$text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex iste labore sit ea animi! Accusamus ea tempora dignissimos! Voluptates ducimus illo consequatur maxime voluptatibus fugit laborum ex optio quos voluptas, nostrum labore? Neque accusamus dolores, animi repudiandae blanditiis non consectetur amet harum, commodi magnam sunt sit excepturi voluptas totam adipisci facere, nisi quo molestiae alias obcaecati expedita optio ab. Totam modi consequuntur odit illo dolores neque esse ex eveniet, atque deleniti libero quaerat rerum, veritatis, officia labore. Animi enim saepe ullam beatae dolores deserunt autem nisi quaerat unde corporis tempora magnam explicabo itaque, qui ut eos adipisci eligendi assumenda quod!";
+$text = substr_replace($text, 'coucou',0,0);
+echo $text;
