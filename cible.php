@@ -12,9 +12,8 @@ $file_name_without_extension = str_replace($forbiden_char, '', $_POST['titre']);
 $file_name_extension = str_replace(' ', '_', $file_name_without_extension);
 
 $contenu = $_POST['contenu'];
-$first_letter = substr($contenu, 0);
-$contenu = substr_replace($contenu,'<div class="tuto_contenu">'.$first_letter,  0,0);
-$contenu = substr_replace( $contenu, $first_letter.'</div>', -1,0);
+$contenu = substr_replace($contenu,'<div class="tuto_contenu">', 0, 0);
+$contenu = substr_replace( $contenu, '</div>', -1,0);
 
 $req->execute(array(
     'titre' => $_POST['titre'],
