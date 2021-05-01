@@ -12,8 +12,8 @@ $file_name_without_extension = str_replace($forbiden_char, '', $_POST['titre']);
 $file_name_extension = str_replace(' ', '_', $file_name_without_extension);
 
 $contenu = $_POST['contenu'];
-$contenu = substr_replace($contenu,'<div class="tuto_contenu">', 0, 0);
-$contenu = substr_replace( $contenu, '</div>', -1,0);
+$contenu = '<div class="tuto_contenu">'.$contenu;
+$contenu = $contenu.'</div>';
 
 $req->execute(array(
     'titre' => $_POST['titre'],
@@ -22,26 +22,5 @@ $req->execute(array(
     'description' => $_POST['description']
 ));
 
-
-// file_put_contents('tuto/'.$file_name_extension, "
-// <!DOCTYPE html>
-// <html lang='fr'>
-// <head>
-//     <meta charset='UTF-8'>
-//     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-//     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-//     <link rel='stylesheet' href='prism.css'>
-//         <link rel='stylesheet' href='style.css'>
-
-//     <title>{$_POST['titre']}</title>
-// </head>
-// <body>
-//     $contenu
-//     <a href='../home.php'>Retour</a>
-//     <script src='prism.js'></script>
-// </body>
-// </html>
-
-// ");
 header('Location: affiche_liste.php', TRUE);
 exit();
