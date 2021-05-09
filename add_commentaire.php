@@ -17,10 +17,22 @@ require 'functions/check_connection.php';
 
 <body>
         <form action="cible.php" method="POST">
-                <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre"></div>
+        <?php
+        if(isset($_GET)){
+            $_SESSION['update'] = true;
+            require 'functions/connect_bdd.php';
+            $reponse = $bdd->prepare('SELECT * FROM tuto WHERE file_name = :required_tuto');
+            $reponse->execute(array(
+                'required_tuto'=>$_GET['tuto']
+            ));
+            $donnees = $reponse->fetch();
+            $_SESSION['id'] = $donnees['id'];
+        }
+        ?>
+                <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre" value="<?=isset($donnees)?$donnees['titre']:'' ?>"></div>
                     <div class="form__contenu">
-                        <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"></textarea>
-                        <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"></textarea>
+                        <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"><?=isset($donnees)?$donnees['description']:'' ?></textarea>
+                        <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"><?=isset($donnees)?$donnees['contenu']:'' ?></textarea>
                     </div>
                     <div class="code_transformation">
                         <textarea name="editeur" id="editeur" cols="30" rows="10" placeholder="Éditeur de code"></textarea>
