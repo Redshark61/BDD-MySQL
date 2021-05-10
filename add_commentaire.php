@@ -18,7 +18,8 @@ require 'functions/check_connection.php';
 <body>
         <form action="cible.php" method="POST">
         <?php
-        if(isset($_GET)){
+        
+        if(!empty($_GET)){
             $_SESSION['update'] = true;
             require 'functions/connect_bdd.php';
             $reponse = $bdd->prepare('SELECT * FROM tuto WHERE file_name = :required_tuto');
@@ -41,7 +42,10 @@ require 'functions/check_connection.php';
                             <button class="copy" type="button">Copier</button>
                         </div>
                     </div>
-            <div class="container__button"><button type="submit">Envoyer</button></div>
+            <div class="container__button">
+            <button type="submit" name="submit">Envoyer</button>
+            <button type="submit" name="save">Sauvegarder</button>
+            </div>
         </form>
     <div class="links">
         <a href="home.php">Retour</a>

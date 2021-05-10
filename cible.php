@@ -15,7 +15,7 @@ $req->execute(array(
     $req->closeCursor();
 }
 else{
-    $req = $bdd->prepare('INSERT INTO tuto(titre, contenu , date_creation, file_name, description) VALUES(:titre, :contenu, NOW(), :file_name, :description)');
+    $req = $bdd->prepare('INSERT INTO tuto(titre, contenu , date_creation, file_name, description, readable) VALUES(:titre, :contenu, NOW(), :file_name, :description, :readable)');
     $forbiden_char = array('\'', '!', '.', '/', '?', ',', ';', '§', '%', '*', '$', '£', '&');
     $file_name_without_extension = str_replace($forbiden_char, '', $_POST['titre']);
     $file_name_extension = str_replace(' ', '_', $file_name_without_extension);
@@ -28,7 +28,8 @@ else{
         'titre' => $_POST['titre'],
         'contenu' => $contenu,
         'file_name' => $file_name_extension,
-        'description' => $_POST['description']
+        'description' => $_POST['description'],
+        'readable' => isset($_POST['save'])?0:1
     ));
     $req->closeCursor();
 }
