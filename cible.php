@@ -1,17 +1,30 @@
 <?php
-// On essaie de se connecter à la base de données (bdd) :
 require 'functions/check_connection.php';
 require 'functions/connect_bdd.php';
-// On se connecte à la table des billets pour en récupérer le contenu :
-//$req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \' le %d/%m/%Y à %H h%i %s\') AS date_heure FROM tuto WHERE id=?');
-if($_SESSION['update']){
-$req = $bdd->prepare('UPDATE tuto SET titre = :titre, contenu = :contenu, description = :description WHERE id=:id');
+
+function update($bdd, $isReadable){
+    $req = $bdd->prepare('UPDATE tuto SET titre = :titre, contenu = :contenu, description = :description, readable=:readable WHERE id=:id');
+    $req->execute(array(
+        'titre' => $_POST['titre'],
+        'contenu' => $_POST['contenu'],
+        'description' => $_POST['description'],
+        'id' => $_SESSION['id'],
+        'readable' => $isReadable
+    ));
+}
+
+
+$req = $bdd->prepare('SELECT * FROM tuto WHERE id=:id');
 $req->execute(array(
-    'titre' => $_POST['titre'],
-    'contenu' => $_POST['contenu'],
-    'description' => $_POST['description'],
     'id' => $_SESSION['id']
 ));
+$donnees = $req->fetch();
+if($_SESSION['update'] && !$donnees['readable'] && !isset($_POST['save'])){
+    update($bdd, 1);
+    $req->closeCursor();
+
+}elseif($_SESSION['update']){
+    update($bdd, 0);
     $req->closeCursor();
 }
 else{
