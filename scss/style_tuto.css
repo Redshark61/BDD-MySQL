@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c265ae), color-stop(#ae61b6), color-stop(#955fbf), color-stop(#745fc6), color-stop(#5f6fd5), color-stop(#427ee2), color-stop(#008ceb), color-stop(#00abf9), color-stop(#00c8fc), color-stop(#00e3f8), to(#5ffbf1));
+  background-image: linear-gradient(to right top, #d16ba5, #c265ae, #ae61b6, #955fbf, #745fc6, #5f6fd5, #427ee2, #008ceb, #00abf9, #00c8fc, #00e3f8, #5ffbf1);
+}
+
+.tuto_contenu {
+  margin: 3rem 10vw;
+  white-space: pre-wrap;
+  background-color: rgba(255, 255, 255, 0.404);
+}
+/*# sourceMappingURL=style_tuto.css.map */
