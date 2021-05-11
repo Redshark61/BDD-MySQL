@@ -17,6 +17,7 @@ $donnees = $reponse->fetch();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="scss/style_tuto.css">
     <link rel="stylesheet" href="scss/style_affiche.css">
     <title><?= $donnees['titre'] ?></title>
 </head>
