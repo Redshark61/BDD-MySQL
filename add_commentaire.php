@@ -30,10 +30,10 @@ require 'functions/check_connection.php';
             $_SESSION['id'] = $donnees['id'];
         }
         ?>
-                <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre" value="<?=isset($donnees)?$donnees['titre']:'' ?>"></div>
+                <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre" value="<?=isset($donnees)?htmlspecialchars($donnees['titre']):'' ?>"></div>
                     <div class="form__contenu">
-                        <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"><?=isset($donnees)?$donnees['description']:'' ?></textarea>
-                        <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"><?=isset($donnees)?$donnees['contenu']:'' ?></textarea>
+                        <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"><?=isset($donnees)?htmlspecialchars($donnees['description']):'' ?></textarea>
+                        <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"><?=isset($donnees)?htmlspecialchars($donnees['contenu']):'' ?></textarea>
                     </div>
                     <div class="code_transformation">
                         <textarea name="editeur" id="editeur" cols="30" rows="10" placeholder="Éditeur de code"></textarea>
