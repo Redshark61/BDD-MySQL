@@ -1,4 +1,5 @@
 <?php
+//Vérifier si l'utilisateur est bien connecté + activation session
 require 'functions/check_connection.php';
 ?>
 
@@ -19,17 +20,22 @@ require 'functions/check_connection.php';
         <form action="cible.php" method="POST">
         <?php
         
+        //Si l'url contient un nom de tuto (n'est pas vide), cela signifie que c'est une modification de tuto déjà existant
         if(!empty($_GET)){
             $_SESSION['update'] = true;
+            //Connexion bdd
             require 'functions/connect_bdd.php';
+            //Récupérer les infos du tuto à modifier
             $reponse = $bdd->prepare('SELECT * FROM tuto WHERE file_name = :required_tuto');
             $reponse->execute(array(
                 'required_tuto'=>$_GET['tuto']
             ));
             $donnees = $reponse->fetch();
+            //Récupérer l'id du tuto demandé
             $_SESSION['id'] = $donnees['id'];
         }
         ?>
+        <!--Si c'est une modification de tuto, on met le contenu dans les textarea et input, sinon on laisse vide-->
                 <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre" value="<?=isset($donnees)?htmlspecialchars($donnees['titre']):'' ?>"></div>
                     <div class="form__contenu">
                         <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"><?=isset($donnees)?htmlspecialchars($donnees['description']):'' ?></textarea>
