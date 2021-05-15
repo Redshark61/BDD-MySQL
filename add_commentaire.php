@@ -17,7 +17,7 @@ require 'functions/check_connection.php';
 </head>
 
 <body>
-        <form action="cible.php" method="POST">
+        <form action="cible.php" method="POST" enctype="multipart/form-data">
         <?php
         
         //Si l'url contient un nom de tuto (n'est pas vide), cela signifie que c'est une modification de tuto déjà existant
@@ -33,6 +33,8 @@ require 'functions/check_connection.php';
             $donnees = $reponse->fetch();
             //Récupérer l'id du tuto demandé
             $_SESSION['id'] = $donnees['id'];
+        }else{
+            $_SESSION['update']=false;
         }
         ?>
         <!--Si c'est une modification de tuto, on met le contenu dans les textarea et input, sinon on laisse vide-->
@@ -51,6 +53,7 @@ require 'functions/check_connection.php';
             <div class="container__button">
             <button type="submit" name="submit">Envoyer</button>
             <button type="submit" name="save">Sauvegarder</button>
+            <input type="file" name="fileToUpload">
             </div>
         </form>
     <div class="links">
