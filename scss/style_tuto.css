@@ -18,5 +18,21 @@ body {
   margin: 3rem 10vw;
   white-space: pre-wrap;
   background-color: rgba(255, 255, 255, 0.404);
+  line-height: 1rem;
+}
+
+.tuto_contenu img {
+  max-width: 100%;
+}
+
+.tuto_contenu span.code {
+  background: rgba(98, 98, 98, 0.514);
+  padding: 0.3rem;
+  color: white;
+  border-radius: 30px;
+}
+
+.tuto_contenu p {
+  line-height: 1.8rem;
 }
 /*# sourceMappingURL=style_tuto.css.map */

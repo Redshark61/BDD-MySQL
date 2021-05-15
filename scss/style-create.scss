@@ -2,7 +2,6 @@
 form {
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: auto 90% auto;
     grid-template-areas: "title title" "edition_text edition_code" "button button";
 }
 
@@ -78,8 +77,13 @@ input::placeholder {
 
 .container__button {
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    button {
+        margin: 3rem;
+    }
 }
 
 button {
