@@ -13,6 +13,7 @@ require 'functions/check_connection.php';
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="scss/style-create.css">
+<script src="format.js" defer></script>
     <title>Ajout d'un tuto</title>
 </head>
 
@@ -41,6 +42,11 @@ require 'functions/check_connection.php';
                 <div class="input"><input type="text" name="titre" id="titre" placeholder="Titre" value="<?=isset($donnees)?htmlspecialchars($donnees['titre']):'' ?>"></div>
                     <div class="form__contenu">
                         <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"><?=isset($donnees)?htmlspecialchars($donnees['description']):'' ?></textarea>
+                        <div class="container_format">
+                            <button class="format" type="button" id="img">Image</button>
+                            <button class="format" type="button" id="h1">Titre</button>
+                            <button class="format" type="button" id="question">Question</button>
+                        </div>
                         <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"><?=isset($donnees)?htmlspecialchars($donnees['contenu']):'' ?></textarea>
                     </div>
                     <div class="code_transformation">
