@@ -35,4 +35,36 @@ body {
 .tuto_contenu p {
   line-height: 1.8rem;
 }
+
+.tuto_contenu h1 {
+  margin: 1rem 0;
+}
+
+.tuto_contenu .question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #6161fb;
+  padding: 3rem;
+  margin: 2rem;
+  max-width: 50vw;
+}
+
+.tuto_contenu .question .question-img {
+  display: contents;
+}
+
+.tuto_contenu .question .question-img img {
+  min-width: 50px;
+  width: 20vw;
+  max-width: 80px;
+  margin-right: 3rem;
+}
+
+.tuto_contenu .question p {
+  font-weight: bold;
+}
 /*# sourceMappingURL=style_tuto.css.map */
