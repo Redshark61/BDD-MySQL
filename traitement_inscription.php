@@ -9,7 +9,7 @@ $reponse = $bdd->query('SELECT * FROM inscription');
 $donnees = $reponse->fetch();
 
 //Vérifier si les mdp sont bon :
-if (($_POST['mdp1'] == $donnees['mdp1']) && ($_POST['mdp2'] == $donnees['mdp2'])) {
+if (($_POST['mdp1'] == $donnees['mdp1'])) {
     $_SESSION['connected'] = true;
     $reponse->closeCursor();
     header('Location: home.php');
