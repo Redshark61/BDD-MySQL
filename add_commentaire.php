@@ -46,15 +46,10 @@ require 'functions/check_connection.php';
                             <button class="format" type="button" id="img">Image</button>
                             <button class="format" type="button" id="h1">Titre</button>
                             <button class="format" type="button" id="question">Question</button>
+                            <button class="format" type="button" id="transform">Bloc de code</button>
+                            <button class="format" type="button" id="span_code">Code</button>
                         </div>
                         <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu"><?=isset($donnees)?htmlspecialchars($donnees['contenu']):'' ?></textarea>
-                    </div>
-                    <div class="code_transformation">
-                        <textarea name="editeur" id="editeur" cols="30" rows="10" placeholder="Éditeur de code"></textarea>
-                        <div class="effect_button">
-                            <button class="transform" type="button">Transformer</button>
-                            <button class="copy" type="button">Copier</button>
-                        </div>
                     </div>
             <div class="container__button">
             <button type="submit" name="submit">Envoyer</button>

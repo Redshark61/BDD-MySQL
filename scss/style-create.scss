@@ -1,13 +1,10 @@
 @import "style";
 form {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-areas: "title title" "edition_text edition_code" "button button";
+    display: flex;
+    flex-direction: column;
 }
-
 .input {
     margin-top: 1rem;
-    grid-area: title;
     display: grid;
     place-items: center;
 }
@@ -19,28 +16,6 @@ form {
     outline: none;
     background-color: rgba(129, 129, 129, 0.459);
     border: none;
-}
-
-.container__button {
-    grid-area: button;
-}
-
-.form__contenu {
-    grid-area: edition_text;
-    display: grid;
-}
-
-.code_transformation {
-    display: flex;
-    flex-direction: column;
-    grid-area: edition_code;
-    margin: 1rem;
-}
-
-#editeur {
-    margin: 0;
-    width: 100%;
-    height: 100%;
 }
 
 #contenu {
@@ -60,16 +35,18 @@ form {
     width: fit-content;
     color: white;
 }
-
-textarea {
-    font-family: "Raleway", sans-serif;
-    color: white;
-    outline: none;
-    background-color: rgba(129, 129, 129, 0.459);
-    margin: 1rem;
-    font-size: 20px;
+.form__contenu {
+    display: flex;
+    flex-direction: column;
+    textarea {
+        font-family: "Raleway", sans-serif;
+        color: white;
+        outline: none;
+        background-color: rgba(129, 129, 129, 0.459);
+        margin: 1rem;
+        font-size: 20px;
+    }
 }
-
 textarea::placeholder,
 input::placeholder {
     color: white;
