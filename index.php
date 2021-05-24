@@ -20,10 +20,6 @@ $_SESSION['connected'] = false
             <label for="mdp1">Mot de passe 1</label>
             <input type="password" name="mdp1" id="mdp1" placeholder="mdp 1">
         </div>
-        <div class="container container_mdp2">
-            <label for="mdp2">Mot de passe 2</label>
-            <input type="password" name="mdp2" id="mdp2" placeholder="mdp 2">
-        </div>
 
         <button type="submit">Valider</button>
     </form>
