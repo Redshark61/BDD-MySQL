@@ -37,9 +37,3 @@ button_transform.addEventListener("click", () => {
     result = beginning_text + selected_text + end_text;
     textarea.value = result;
 });
-
-// buttton_copy.addEventListener("click", () => {
-//     var selected_text = document.querySelector("#editeur");
-//     selected_text.select();
-//     document.execCommand("copy");
-// });
