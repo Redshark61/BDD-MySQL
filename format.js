@@ -10,12 +10,12 @@ var list_shortcut = [
         ],
     ],
     ["span_code", ['<span class="code">', "</span>"]],
+    ["video", ['<VIDEO "', '" type="video/mp4"/></video>']],
 ];
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         var textarea = document.querySelector("#contenu");
-        //var text_p = document.querySelector("#contenu");
         s = window.getSelection();
         oRange = s.getRangeAt(0); //get the text range
         var beginning_text = textarea.value.substr(0, textarea.selectionStart);
