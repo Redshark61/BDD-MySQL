@@ -1,16 +1,18 @@
 const buttons = document.querySelectorAll(".format");
 var list_shortcut = [
-    ["img", ['<IMG "', '" alt="">']],
+    ["img", ['</p><IMG "', '" alt=""><p>']],
     ["h1", ["</p><h1>", "</h1><p>"]],
     [
         "question",
         [
-            '</p><div class="question"><div class="question-img"><img src="ressources/question-mark.png"></div><p>',
+            '</p><div class="question"><div class="question-img"><img src="sources/ressources/question-mark.png"></div><p>',
             "</p></div><p>",
         ],
     ],
     ["span_code", ['<span class="code">', "</span>"]],
     ["video", ['<VIDEO "', '" type="video/mp4"/></video>']],
+    ["subh1", ['</p><h2 class="sub-h1">', "</h2><p>"]],
+    ["bold", ["<b>", "</b>"]],
 ];
 
 buttons.forEach((button) => {

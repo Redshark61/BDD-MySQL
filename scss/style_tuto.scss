@@ -17,10 +17,12 @@
     }
     p {
         line-height: 1.8rem;
+        font-size: 18px;
     }
 
     h1 {
         margin: 1rem 0;
+        font-size: 34px;
     }
 
     .question {
@@ -43,4 +45,13 @@
             font-weight: bold;
         }
     }
+}
+
+h2.sub-h1 {
+    color: #f4b942;
+    font-size: 24px;
+}
+
+b {
+    font-weight: 900;
 }

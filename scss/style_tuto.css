@@ -34,10 +34,12 @@ body {
 
 .tuto_contenu p {
   line-height: 1.8rem;
+  font-size: 18px;
 }
 
 .tuto_contenu h1 {
   margin: 1rem 0;
+  font-size: 34px;
 }
 
 .tuto_contenu .question {
@@ -66,5 +68,14 @@ body {
 
 .tuto_contenu .question p {
   font-weight: bold;
+}
+
+h2.sub-h1 {
+  color: #f4b942;
+  font-size: 24px;
+}
+
+b {
+  font-weight: 900;
 }
 /*# sourceMappingURL=style_tuto.css.map */

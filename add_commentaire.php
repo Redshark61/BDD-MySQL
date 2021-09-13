@@ -14,6 +14,7 @@ require 'functions/check_connection.php';
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/style-create.css">
     <script src="format.js" defer></script>
+    <script src="copy.js" defer></script>
     <title>Ajout d'un tuto</title>
 </head>
 
@@ -46,10 +47,12 @@ require 'functions/check_connection.php';
             <div class="container_format">
                 <button class="format" type="button" id="img" form="create_tuto">Image</button>
                 <button class="format" type="button" id="h1" form="create_tuto">Titre</button>
+                <button class="format" type="button" id="subh1" form="create_tuto">Sous titre</button>
                 <button class="format" type="button" id="question" form="create_tuto">Question</button>
                 <button class="format" type="button" id="transform" form="create_tuto">Bloc de code</button>
                 <button class="format" type="button" id="span_code" form="create_tuto">Code</button>
                 <button class="format" type="button" id="video" form="create_tuto">Vidéo</button>
+                <button class="format" type="button" id="bold" form="create_tuto">Gras</button>
             </div>
             <textarea name="contenu" id="contenu" cols="30" rows="10" placeholder="Contenu" form="create_tuto"><?= isset($donnees) ? htmlspecialchars($donnees['contenu']) : '' ?></textarea>
         </div>
@@ -60,15 +63,22 @@ require 'functions/check_connection.php';
     </form>
     <ul>
         <?php
+        //Fonction pour vérifier si un dossier est vide
         function is_dir_empty($dir)
         {
             if (!is_readable($dir)) return null;
             return (count(scandir($dir)) == 2);
         }
 
+        //Si il y a un get dans l'url
         if (!empty($_GET)) {
-            $directory = './ressources/tuto/' . $_GET['tuto'];
+
+            //On créé l'url qui mène au tuto (qui contient le nom du dossier car nom de dossier = nom du tuto)
+            $directory = './ressources/tuto/' . $_GET['tuto'] . '/';
+
+            //Si dans l'url il y a un param "remove" cela signifie que l'on veut supprimer un fichier
             if (isset($_GET['remove'])) {
+                //On efface le fichier passé dans l'url avec 'unlink'
                 if (unlink($_GET['remove'])) {
                     echo "This file has been removed";
                 } else {
@@ -76,15 +86,20 @@ require 'functions/check_connection.php';
                 }
             }
 
+            //récupérer l'url automatiquement si c'est https ou http
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
+            //On vérifie que le dossier du tuto contient qlq chose
             if (!is_dir($directory)) {
-                exit('Invalid diretory path');
+                exit('Invalid diretory path' . $directory);
+                //Si il est vide on affiche une liste vide
             } elseif (is_dir_empty($directory)) {
 
                 echo '
                 <li>Aucune image</li>';
+                //Si le dossier est plein
             } else {
+                //On affiche chaque image avec la possibilité de l'effacer
                 foreach (scandir($directory) as $file) {
                     if ($file !== '.' && $file !== '..') {
                         echo "
